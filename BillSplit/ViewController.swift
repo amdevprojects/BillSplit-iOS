@@ -55,9 +55,18 @@ class ViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
             return
         }
-        
-        let finalAmount = (amount + (amount / 100 * tipPercent)) / (Int(splitCount.text ?? "0") ?? 0)
         self.performSegue(withIdentifier: "navigateToResult", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "navigateToResult" {
+            let amount: Float = Float(amountInput.text ?? "0") ?? 0.0
+            let tip: Float = Float(amount) / 100.0 * Float(tipPercent)
+            let split: Float = Float(Int(splitCount.text ?? "0") ?? 0)
+            let finalAmount: Float = (amount + tip) / split
+            let viewController = segue.destination as? ResultViewController
+            viewController?.amountPerPerson = finalAmount
+        }
     }
 }
 

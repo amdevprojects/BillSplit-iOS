@@ -8,7 +8,9 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-
+    
+    var amountPerPerson: Float = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
