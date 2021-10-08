@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onCalculateBtnPressed(_ sender: UIButton) {
-        let amount: Int = Int(amountInput.text ?? "0") ?? 0
+        let amount: Float = Float(amountInput.text ?? "0") ?? 0.0
         if amount < 1 {
             let alert = UIAlertController.init(title: "Error", message: "Please enter amount", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

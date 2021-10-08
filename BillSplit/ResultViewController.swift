@@ -11,13 +11,18 @@ class ResultViewController: UIViewController {
     
     var amountPerPerson: Float = 0.0
     
+    @IBOutlet weak var amountPerPersonLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        amountPerPersonLabel.text = "Amount per person is \(amountPerPerson)"
     }
     
-
+    @IBAction func onRecalculateBtnPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -226,9 +226,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="msT-zK-r9w" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="189"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMb-Jc-KVH">
-                                        <rect key="frame" x="186" y="84" width="57" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nMb-Jc-KVH">
+                                        <rect key="frame" x="107" y="80" width="200" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="ZGx-Xu-xjq"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -236,6 +238,9 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="nMb-Jc-KVH" firstAttribute="centerX" secondItem="msT-zK-r9w" secondAttribute="centerX" id="8oo-qG-nYs"/>
+                                    <constraint firstItem="nMb-Jc-KVH" firstAttribute="centerY" secondItem="msT-zK-r9w" secondAttribute="centerY" id="RKA-RK-ako"/>
+                                    <constraint firstItem="nMb-Jc-KVH" firstAttribute="centerX" secondItem="msT-zK-r9w" secondAttribute="centerX" id="uXB-DM-dsN"/>
                                     <constraint firstAttribute="height" constant="189" id="ugh-Cc-WaM"/>
                                 </constraints>
                             </view>
@@ -251,6 +256,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Recalculate"/>
+                                        <connections>
+                                            <action selector="onRecalculateBtnPressed:" destination="N5K-cA-cX6" eventType="touchUpInside" id="IJK-nl-Bul"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.42745098040000001" green="0.59607843140000005" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -272,6 +280,9 @@
                             <constraint firstAttribute="bottom" secondItem="iWN-Ir-IbE" secondAttribute="bottom" id="mXV-4P-alC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amountPerPersonLabel" destination="nMb-Jc-KVH" id="PQ9-ef-Crr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c32-4u-IRF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
